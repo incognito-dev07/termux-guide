@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/beginner",
+      "dest": "/beginner.html"
+    },
+    {
+      "src": "/beginner.html",
+      "dest": "/beginner.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

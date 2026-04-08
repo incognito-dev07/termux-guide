@@ -1,0 +1,173 @@
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+  
+  .main-content {
+    margin-left: 240px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section-header i {
+    font-size: 1.6rem;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .section-header i {
+    font-size: 1.3rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .code-block pre {
+    font-size: 0.7rem;
+    padding: 0.75rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  .footer {
+    padding: 1.5rem 0;
+  }
+  
+  .toast {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    bottom: 20px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .menu-panel {
+    width: 260px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .sidebar-item,
+  .menu-item,
+  .copy-code-btn,
+  .btn,
+  .goto-beginner-btn {
+    cursor: default;
+  }
+  
+  .sidebar-item:active,
+  .menu-item:active,
+  .copy-code-btn:active,
+  .btn:active,
+  .goto-beginner-btn:active {
+    transform: scale(0.98);
+  }
+  
+  input,
+  button {
+    font-size: 16px !important;
+  }
+  
+  .sidebar-item,
+  .menu-item {
+    min-height: 44px;
+  }
+  
+  .copy-code-btn {
+    min-height: 32px;
+  }
+}
+
+@media print {
+  .sidebar,
+  .menu-overlay,
+  .menu-panel,
+  .hamburger-btn,
+  .search-container,
+  .copy-code-btn,
+  .footer,
+  .goto-beginner {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .section-container {
+    break-inside: avoid;
+  }
+  
+  .code-block {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+  
+  .code-block pre {
+    color: #000;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Absolute beginner guide to Termux - Learn terminal basics from scratch">
+  <title>Termux Beginner Guide - Start Here</title>
+  <link rel="icon" href="/assets/termux.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/core.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <div id="app" class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo" onclick="window.location.href='/'">
+          <img src="/assets/termux.svg" alt="Termux" class="logo-icon">
+          <span>Termux<span class="logo-highlight">Guide</span></span>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <a href="/" class="back-link">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Main</span>
+        </a>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-items" id="sidebarItems"></div>
+      </div>
+    </aside>
+
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <div class="menu-panel" id="menuPanel">
+      <div class="menu-header">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Beginner Guide</h3>
+        <a href="/" class="mobile-back-link">← Back to Main</a>
+      </div>
+      <div class="menu-items" id="mobileMenuItems"></div>
+    </div>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="hero">
+          <h1>Absolute <span class="gradient-text">Beginner</span> Guide</h1>
+          <p class="hero-subtitle">Never used a terminal before? Start here. No prior knowledge needed.</p>
+        </div>
+
+        <div class="search-container">
+          <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search beginner topics...">
+            <button class="search-clear" id="searchClear" style="display: none;">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="contentContainer"></div>
+
+        <footer class="footer">
+          <p>Termux is available on <a href="https://f-droid.org/en/packages/com.termux/" target="_blank">F-Droid</a> and <a href="https://github.com/termux/termux-app" target="_blank">GitHub</a></p>
+          <p class="footer-note">2026 Incognito | Open Source Tutorial</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <div id="copyToast" class="toast">Copied to clipboard!</div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/navigation.js"></script>
+</body>
+</html>
