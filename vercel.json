@@ -2,11 +2,27 @@
   "version": 2,
   "routes": [
     {
-      "src": "/beginner",
-      "dest": "/beginner.html"
+      "src": "/css/(.*)",
+      "dest": "/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/js/$1"
+    },
+    {
+      "src": "/data/(.*)",
+      "dest": "/data/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
       "src": "/beginner.html",
+      "dest": "/beginner.html"
+    },
+    {
+      "src": "/beginner",
       "dest": "/beginner.html"
     },
     {
