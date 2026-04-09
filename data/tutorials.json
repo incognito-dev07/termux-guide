@@ -7,7 +7,7 @@
         {
           "title": "What is a Terminal?",
           "description": "Think of Termux as a text-only way to control your phone. Instead of tapping buttons, you type commands. When you press Enter, the command runs.",
-          "code": "+---------------------------------------------------+\n|  YOU TYPE:    hello                               |\n|  PRESS:       [Enter]                             |\n|  COMPUTER:    \"command not found\"                 |\n+---------------------------------------------------+\n\n# Don't worry about errors - they are just the computer saying \"I don't understand that word\""
+          "code": "+-----------------------------------+\n|  YOU TYPE:    hello                               \n|  YOU PRESS:   [Enter]                             \n|  COMPUTER:    \"command not found\"\n+-----------------------------------+\n\n# Don't worry about errors - they are just the computer saying \"I don't understand that word\""
         },
         {
           "title": "Your First Command",
@@ -28,7 +28,7 @@
         {
           "title": "The Command Pattern",
           "description": "Every terminal command follows a simple pattern: COMMAND followed by WHAT TO ACT ON.",
-          "code": "ls              # COMMAND only (lists files)\nls Documents    # COMMAND + TARGET (lists files INSIDE Documents)\ncp file.txt backup/  # COPY + SOURCE + DESTINATION\n\n# Think of it like English sentences:\n# \"Show me\" (ls) \"the files\" (no target needed)\n# \"Copy\" (cp) \"this file\" (file.txt) \"to that folder\" (backup/)"
+          "code": "ls              # lists files\nls Documents    # lists files in Documents\ncp file.txt backup/  # cp + source + destination\n\n# Think of it like English sentences:\n# \"Show me\" (ls) \"the files\" (no target needed)\n# \"Copy\" (cp) \"this file\" (file.txt) \"to that folder\" (backup/)"
         },
         {
           "title": "Step-by-Step: Navigate Folders",
@@ -49,7 +49,7 @@
         {
           "title": "The Three Most Important Commands",
           "description": "Memorize these. You will use them constantly.",
-          "code": "ls  = \"What is here?\" - Lists all files and folders\ncd  = \"Go there\" - Moves you into a different folder\npwd = \"Where am I?\" - Shows your current location\n\n# REAL EXAMPLE:\npwd              # Shows where you are\nls               # Shows what is here\ncd practice      # Go into practice folder\npwd              # Shows new location\nls               # Shows files in practice\ncd ..            # Go back (.. means parent folder)\npwd              # Back to where you started"
+          "code": "ls  = \"What is here?\" - Lists all files and folders\ncd  = \"Go there\" - Moves you into a different folder\npwd = \"Where am I?\" - Shows your current location\n\n# REAL EXAMPLE:\npwd              # Shows where you are\nls               # Shows what is here\ncd practice      # Go into practice folder\npwd              # Shows new location\nls               # Shows files in practice\ncd ..            # Go back (.. means parent folder)"
         },
         {
           "title": "Common Beginner Mistakes",
@@ -87,8 +87,8 @@
       "items": [
         {
           "title": "Where to Download Termux",
-          "description": "The Google Play Store version is abandoned and broken. You MUST use F-Droid.",
-          "code": "# CORRECT SOURCE: F-Droid\n# URL: https://f-droid.org/en/packages/com.termux/\n\n# WRONG SOURCE: Google Play Store (DO NOT USE)\n# The Play Store version is years old and has many issues.\n\n# After installing, open Termux and wait. The first launch takes 10-30 seconds to set up."
+          "description": "The Google Play Store version is abandoned and broken. Use F-Droid version instead.",
+          "code": "# CORRECT SOURCE: F-Droid\nhttps://f-droid.org/en/packages/com.termux/\n\n# Do not use the Play Store version as it is deprecated and without updates.\n\n# After installing, open Termux and wait. The first launch takes 10-30 seconds to set up."
         },
         {
           "title": "First Launch and Initial Setup",
@@ -98,7 +98,7 @@
         {
           "title": "Grant Storage Access",
           "description": "Termux needs permission to see your Android files like photos, downloads, and documents.",
-          "code": "# Type this command:\ntermux-setup-storage\n\n# A popup will appear. Tap \"ALLOW\"\n\n# After granting permission, you will see \"Filesystem setup complete\"\n\n# Now you can access your Android files at: ~/storage/shared/\n\n# To verify:\nls ~/storage/shared/Download/"
+          "code": "# Type this command:\ntermux-setup-storage\n\n# Now you can access your Android files at: ~/storage/shared/\n\n# To verify:\nls ~/storage/shared/Download/"
         },
         {
           "title": "Verify Everything Works",
@@ -108,12 +108,12 @@
         {
           "title": "Understanding Termux Storage",
           "description": "Termux has its own private storage separate from Android. This is for security.",
-          "code": "# TERMUX PRIVATE STORAGE:\n# /data/data/com.termux/files/home/ (your home folder)\n# Other apps cannot see this folder.\n\n# ANDROID SHARED STORAGE:\n# ~/storage/shared/ (access to your phone's storage)\n# Both Termux and Android apps can access this.\n\n# WHY THIS MATTERS:\n# - Files you create go to Termux private storage by default\n# - To share files with other apps, copy them to ~/storage/shared/\n# - Example: cp myfile.txt ~/storage/shared/Documents/"
+          "code": "# TERMUX PRIVATE STORAGE:\n/data/data/com.termux/files/home/ # your home folder\n# Other apps cannot see this folder.\n\n# ANDROID SHARED STORAGE:\n~/storage/shared/ # access to your phone's storage\n# Both Termux and Android apps can access this.\n\n# WHY THIS MATTERS:\n# - Files you create go to Termux private storage by default\n# - To share files with other apps, copy them to ~/storage/shared/\n# - Example: \ncp myfile.txt ~/storage/shared/Documents/"
         },
         {
           "title": "Setting Up Your Environment",
           "description": "Optional but recommended - customize Termux for a better experience.",
-          "code": "# ENABLE EXTRA KEYS ROW:\necho 'extra-keys = [[\"ESC\",\"CTRL\",\"ALT\",\"LEFT\",\"RIGHT\",\"UP\",\"DOWN\"]]' > ~/.termux/termux.properties\ntermux-reload-settings\n\n# INSTALL A BETTER EDITOR (optional):\npkg install vim\n\n# CHANGE COLOR SCHEME:\nmkdir -p ~/.termux\nnano ~/.termux/colors.properties\n\n# Add this for a dark theme:\n# background=black\n# foreground=white\n# cursor=purple\n\n# Save and restart Termux."
+          "code": "# ENABLE EXTRA KEYS ROW:\necho 'extra-keys = [[\"ESC\",\"CTRL\",\"ALT\",\"LEFT\",\"RIGHT\",\"UP\",\"DOWN\"]]' > ~/.termux/termux.properties\ntermux-reload-settings\n\n# INSTALL A BETTER EDITOR (optional):\npkg install vim\n\n# CHANGE COLOR SCHEME:\nmkdir -p ~/.termux\nnano ~/.termux/colors.properties\n\n# Add this for a dark theme:\nbackground=black\nforeground=white\n\n# Save and restart Termux."
         }
       ]
     },
@@ -129,47 +129,47 @@
         {
           "title": "ls - What Is Here?",
           "description": "Lists all files and folders in your current location.",
-          "code": "ls              # Basic list (names only)\nls -l           # Long format (permissions, size, date)\nls -a           # Show all files (including hidden ones that start with .)\nls -la          # Long format + all files (most common)\nls -lh          # Human-readable sizes (KB, MB, GB)\nls -lt          # Sort by modification time (newest first)\nls -lS          # Sort by file size (largest first)\nls Documents/   # List contents of a specific folder\nls *.txt        # List only .txt files (wildcard pattern)\n\n# EXAMPLE OUTPUT of 'ls -la':\n# drwx------ 2 user group 4096 Jan 15 10:30 .\n# drwx------ 3 user group 4096 Jan 15 10:30 ..\n# -rw------- 1 user group   12 Jan 15 10:30 mynote.txt\n# 'd' means directory. '-' means regular file."
+          "code": "ls        # Basic file list (names only)\nls -la     # Shows all files in long format (including hidden ones)\nls Documents/   # List contents of a folder\nls *.txt        # List only .txt files \n\n# EXAMPLE OUTPUT of 'ls -la':\n# drwx---- 2 user group 4096 Jan 15 10:30 .\n# -rw----- 1 user group   12 Jan 15 10:30 mynote.txt\n# 'd' means directory. '-' means regular file."
         },
         {
           "title": "cd - Go There",
           "description": "Moves you into different folders.",
-          "code": "cd practice   # Go into the 'practice' folder\ncd ..         # Go up one level (to the parent folder)\ncd ../..      # Go up two levels\ncd ~          # Go to your home folder\ncd /          # Go to the root of the entire file system\ncd -          # Go back to the previous folder\ncd            # 'cd' by itself goes home (same as cd ~)\n\n# TIP: Tab completion - Type 'cd Docu' then press Tab - it completes to 'cd Documents/'"
+          "code": "cd practice   # Go to 'practice' folder\ncd ..         # Go to previous folder\ncd ~          # Go to your home folder\ncd /          # Go to the root of the entire file system\ncd            # same as cd ~\n\n# TIP: Tab completion - Type 'cd Docu' then press Tab - it completes to 'cd Documents/'"
         },
         {
           "title": "mkdir - Create Folders",
           "description": "Creates new folders to organize your files.",
-          "code": "mkdir projects       # Create a folder named 'projects'\nmkdir -p a/b/c      # Create nested folders (a, then a/b, then a/b/c)\nmkdir -v folder     # Create folder with verbose output (shows what happened)\nmkdir -m 755 folder # Create folder with specific permissions\nmkdir folder1 folder2 folder3  # Create multiple folders at once\n\n# BEST PRACTICES:\n# - Use lowercase names (Linux is case-sensitive)\n# - No spaces (use underscores: 'my_folder')\n# - Be descriptive: 'python_projects' is better than 'stuff'"
+          "code": "mkdir projects       # Create a folder named 'projects'\nmkdir -m 755 folder   # Create folder with specific permissions\nmkdir folder1 folder2 folder3  # Create multiple folders at once\n\n# BEST PRACTICES:\n# - Use lowercase names (Linux is case-sensitive)\n# - No spaces (use underscores or hyphens: 'my_folder' or 'my-folder')"
         },
         {
           "title": "touch - Create Empty Files",
           "description": "Creates an empty file or updates a file's timestamp.",
-          "code": "touch README.md        # Create an empty file\ntouch file1.txt file2.txt file3.txt  # Create multiple files\ntouch -t 202401151230 file.txt  # Set specific timestamp\n\n# EXAMPLE WORKFLOW:\n# touch todo.txt\n# ls -l todo.txt       # Check the file was created\n# nano todo.txt        # Now edit it to add content"
+          "code": "touch README.md        # Create an empty file\ntouch file1.txt file2.txt file3.txt  # Create multiple files\ntouch -t 202401151230 file.txt  # Set specific timestamp"
         },
         {
           "title": "cat - Read Files",
           "description": "Displays the entire contents of a file.",
-          "code": "cat mynote.txt      # Show everything in mynote.txt\ncat file1.txt file2.txt  # Show both files one after another\ncat -n filename.txt   # Show with line numbers\ncat -b filename.txt   # Show line numbers only for non-blank lines\n\n# LIMITATION: 'cat' shows the ENTIRE file. For long files, use 'less' or 'head' instead.\n# ALTERNATIVES:\n# head mynote.txt    # Show first 10 lines only\n# tail mynote.txt    # Show last 10 lines only\n# less mynote.txt    # View page by page (press q to quit)"
+          "code": "cat mynote.txt      # Show everything in mynote.txt\ncat file1.txt file2.txt  # Show both files one after another\ncat -n filename.txt   # Show with line numbers\n\n# LIMITATION: 'cat' shows the ENTIRE file. For long files, use 'tail' or 'head' instead.\n# ALTERNATIVES:\n# head mynote.txt    # Show first 10 lines\n# tail mynote.txt    # Show last 10 lines"
         },
         {
           "title": "cp - Copy Files",
           "description": "Creates a copy of a file or folder. The original remains unchanged.",
-          "code": "cp source.txt destination.txt     # Copy a single file\ncp -r source_folder/ dest_folder/   # Copy entire folder (recursive)\ncp -i file.txt backup/              # Ask before overwriting (safe)\ncp -v file.txt copy.txt             # Show what is being copied (verbose)\ncp -u file.txt backup/              # Copy only if source is newer (update)\ncp -p file.txt copy.txt             # Preserve permissions and timestamps\n\n# EXAMPLE:\n# cp mynote.txt ~/storage/shared/Documents/\n# This copies your note to Android's Documents folder"
+          "code": "cp source.txt destination.txt\ncp -r source_folder/ dest_folder/   # Copy entire folder (recursive)\ncp -p file.txt copy.txt     # Preserve permissions and timestamps\n\n# EXAMPLE:\n# cp mynote.txt ~/storage/shared/Documents/\n# This copies your note to Android's Documents folder"
         },
         {
           "title": "mv - Move or Rename",
           "description": "Moves files to different locations OR renames them. No copy is created.",
-          "code": "mv oldname.txt newname.txt        # Rename a file\nmv file.txt ~/Documents/            # Move to a different folder\nmv -i file.txt destination/         # Ask before overwriting\nmv -v *.txt Documents/              # Move all .txt files (verbose)\nmv folder1/folder2 .                # Move a subfolder to current location\n\n# DIFFERENCE BETWEEN CP AND MV:\n# cp = COPY (original stays, new copy created)\n# mv = MOVE (original moves, no copy remains)"
+          "code": "mv oldname.txt newname.txt   # Rename file\nmv file.txt ~/Documents/   # Move to a different folder\nmv folder1/folder2 .    # Move a subfolder to current location\n\n# DIFFERENCE BETWEEN CP AND MV:\n# cp = COPY (original stays, new copy created)\n# mv = MOVE (original moves, no copy remains)"
         },
         {
           "title": "rm - Delete Files",
           "description": "Permanently deletes files. There is NO undo. Be very careful.",
-          "code": "rm file.txt           # Delete a single file\nrm -r folder/         # Delete a folder and everything inside\nrm -i file.txt        # Ask for confirmation (SAFE)\nrm -f file.txt        # Force delete without confirmation (DANGEROUS)\nrm -rf folder/        # Force delete folder without confirmation (VERY DANGEROUS)\nrm *.txt              # Delete all .txt files in current directory\n\n# SAFETY RULES:\n# 1. Always use 'rm -i' when learning\n# 2. Triple-check the filename\n# 3. Use 'ls' first to see what you are deleting\n# 4. NEVER run 'rm -rf /' - this would delete everything\n\n# SAFE ALTERNATIVE: Create a trash folder\n# mkdir ~/trash\n# mv unwanted.txt ~/trash/   # Safer than rm"
+          "code": "rm file.txt    # Delete a single file\nrm -r folder/   # Delete a folder and everything inside\nrm -f file.txt   # Force delete without confirmation (DANGEROUS)\nrm -rf folder/   # Force delete folder without confirmation (VERY DANGEROUS)\nrm *.txt     # Delete all .txt files in current directory\n\n# SAFETY RULES:\n# 1. Always use 'rm -i' when learning\n# 2. Triple-check the filename\n# 3. Use 'ls' first to see what you are deleting\n# 4. NEVER run 'rm -rf /' - this would delete everything in Termux"
         },
         {
           "title": "echo - Print Text",
           "description": "Prints text to the screen. Useful for scripts and testing.",
-          "code": "echo 'Hello World'           # Print text\necho $HOME                   # Print the value of a variable\necho -n 'No newline'         # Print without adding a newline\necho -e 'Line1\\nLine2'       # Enable escape sequences (\\n = newline)\necho 'Text' > file.txt       # Write text to a file (overwrite)\necho 'More' >> file.txt      # Append text to a file"
+          "code": "echo 'Hello World'   # Print text\necho $HOME    # Print a variable's value\necho 'Text' > file.txt    # Write text to a file (overwrite)\necho 'More' >> file.txt      # Append text to a file"
         }
       ]
     },
@@ -180,27 +180,17 @@
         {
           "title": "Termux Directory Structure",
           "description": "Termux has its own isolated file system. Here is what each important directory does.",
-          "code": "# YOUR HOME FOLDER:\n# ~ or /data/data/com.termux/files/home\n# All your personal files and projects should go here.\n\n# PACKAGES FOLDER:\n# $PREFIX or /data/data/com.termux/files/usr\n# Where installed packages live. You rarely need to touch this.\n\n# ANDROID STORAGE (after termux-setup-storage):\n# ~/storage/shared/     - Your phone's internal storage\n# ~/storage/downloads/  - Downloads folder\n# ~/storage/dcim/       - Camera photos\n# ~/storage/pictures/   - Other images\n# ~/storage/music/      - Music files\n# ~/storage/movies/     - Video files\n\n# OTHER IMPORTANT PATHS:\n# /proc/                - System information (virtual filesystem)\n# /dev/                 - Device files\n# /tmp/                 - Temporary files (cleared on reboot)"
+          "code": "# YOUR HOME FOLDER:\n# ~ or /data/data/com.termux/files/home\n# All your personal files and projects should go here.\n\n# PACKAGES FOLDER:\n# $PREFIX or /data/data/com.termux/files/usr\n# Where installed packages live. You rarely need to touch this.\n\n# ANDROID STORAGE (after termux-setup-storage):\n# ~/storage/shared/     - Your phone's internal storage\n# ~/storage/downloads/  - Downloads folder\n# ~/storage/dcim/       - Camera photos\n# ~/storage/pictures/   - Other images\n# ~/storage/music/      - Music files\n# ~/storage/movies/     - Video files"
         },
         {
           "title": "Absolute vs Relative Paths",
           "description": "Paths tell the computer where a file is. Understanding the difference is crucial.",
-          "code": "# ABSOLUTE PATH: Starts from the root (/)\n# Example: /data/data/com.termux/files/home/practice/mynote.txt\n# This path works no matter where you are.\n\n# RELATIVE PATH: Starts from your current location\n# Example: practice/mynote.txt\n# This only works if you are in the home folder.\n\n# SPECIAL SHORTCUTS:\n# .  = Current folder\n# .. = Parent folder (one level up)\n# ~  = Home folder\n# -  = Previous folder\n\n# EXAMPLES:\n# cd /data/data/com.termux/files/home  # Absolute path (works anywhere)\n# cd practice                           # Relative path\n# cd ../Documents                       # Go up then into Documents\n# cd ~/storage/shared/DCIM              # Go home then to camera photos"
-        },
-        {
-          "title": "File Permissions Explained",
-          "description": "Every file has permissions that control who can read, write, or execute it.",
-          "code": "# VIEWING PERMISSIONS:\n# ls -l filename.txt\n# Output: -rw------- 1 user group 12 Jan 15 10:30 filename.txt\n\n# The first 10 characters show permissions:\n# Position 1: '-' for file, 'd' for directory\n# Positions 2-4: Owner permissions (r=read, w=write, x=execute)\n# Positions 5-7: Group permissions\n# Positions 8-10: Others permissions\n\n# NUMERIC PERMISSIONS (octal):\n# 4 = read, 2 = write, 1 = execute\n# 644 = owner: 6 (4+2), group: 4, others: 4 (rw-r--r--)\n# 755 = owner: 7 (4+2+1), group: 5 (4+1), others: 5 (rwxr-xr-x)\n\n# COMMON PERMISSIONS:\n# 644 = Owner can read/write, others can only read (normal files)\n# 755 = Owner can do everything, others can read/execute (programs)\n# 600 = Only owner can read/write (private files)\n\n# CHANGING PERMISSIONS:\n# chmod +x script.sh     # Make script executable\n# chmod 755 script.sh    # Set specific permissions\n# chmod 600 secret.txt   # Make private"
-        },
-        {
-          "title": "Finding Files with find",
-          "description": "The 'find' command searches for files and folders. It is very powerful.",
-          "code": "# BASIC FIND COMMANDS:\nfind . -name '*.txt'              # Find all .txt files in current directory\nfind ~ -type d                     # Find all directories in home\nfind /sdcard -size +10M            # Find files larger than 10MB\nfind . -mtime -7                   # Files modified in last 7 days\nfind . -name '*.log' -delete       # Find and delete .log files\n\n# COMMON FIND PATTERNS:\nfind . -name '*.py'                # All Python files\nfind . -type f -empty              # Empty files\nfind . -perm 755                   # Files with specific permissions\n\n# COMBINE WITH OTHER COMMANDS:\nfind . -name '*.txt' -exec ls -l {} \\;   # List details of found files\nfind . -name '*.jpg' -exec cp {} ~/pictures/ \\;  # Copy found files"
+          "code": "# ABSOLUTE PATH: Starts from the root (/)\n# Example: /data/data/com.termux/files/home/practice/mynote.txt\n# This path works no matter where you are.\n\n# RELATIVE PATH: Starts from your current location\n# Example: practice/mynote.txt\n# This only works if you are in the home folder.\n\n# SPECIAL SHORTCUTS:\n# .  = Current folder\n# .. = Parent folder (one level up)\n# ~  = Home folder\n# -  = Previous folder\n\n# EXAMPLES:\n# cd /data/data/com.termux/files/home  # Absolute path (works anywhere)\n# cd practice      # Relative path\n# cd ../Documents     # Go up then into Documents\n# cd ~/storage/shared/DCIM    # Go home then to camera photos"
         },
         {
           "title": "Viewing Files with less and head/tail",
           "description": "For large files, cat is not practical. Use less, head, and tail instead.",
-          "code": "# HEAD AND TAIL:\nhead -n 20 file.txt      # Show first 20 lines\ntail -n 20 file.txt      # Show last 20 lines\ntail -f log.txt          # Follow file as it grows (real-time)\n\n# LESS COMMANDS (while viewing):\n# less file.txt\n# q = Quit\n# Space = Next page\n# b = Previous page\n# /word = Search forward for 'word'\n# n = Next search result\n# N = Previous search result\n# g = Go to beginning\n# G = Go to end"
+          "code": "# HEAD AND TAIL:\nhead -n 20 file.txt  # Show first 20 lines\ntail -n 20 file.txt    # Show last 20 lines\ntail -f log.txt   # Follow file as it grows (real-time)\n\n# LESS COMMANDS (while viewing):\n# less file.txt\n# q = Quit\n# Space = Next page\n# b = Previous page\n# /word = Search forward for 'word'\n# n = Next search result\n# N = Previous search result\n# g = Go to beginning\n# G = Go to end"
         }
       ]
     },
@@ -216,12 +206,12 @@
         {
           "title": "Essential pkg Commands",
           "description": "These are the only pkg commands you need to know.",
-          "code": "# UPDATE AND UPGRADE (do this first always)\npkg update    # Refresh the list of available packages\npkg upgrade   # Actually install newer versions\n\n# SEARCHING\npkg search python    # Find packages related to 'python'\npkg list-all        # Show every available package (very long)\n\n# INSTALLING\npkg install python   # Install Python\npkg install nodejs git vim  # Install multiple packages\n\n# REMOVING\npkg uninstall python  # Remove Python\npkg uninstall python --purge  # Remove including configuration files\n\n# INFORMATION\npkg list-installed   # Show what you have installed\npkg show python      # Show detailed info about a package\n\n# CLEANING (free up space)\npkg clean           # Remove downloaded package files"
+          "code": "# UPDATE AND UPGRADE (do this first always)\npkg update && pkg upgrade  # Refresh the list of available packages and install newer versions\n\n# SEARCHING\npkg search python    # Find packages related to 'python'\npkg list-all        # Show every available package (very long)\n\n# INSTALLING\npkg install python   # Install Python\npkg install nodejs git vim  # Install multiple packages\n\n# REMOVING\npkg uninstall python  # Remove Python\npkg uninstall python --purge  # Remove including configuration files\n\n# INFORMATION\npkg list-installed   # Show what you have installed\npkg show python      # Show detailed info about a package\n\n# CLEANING (free up space)\npkg clean    # Remove downloaded package files"
         },
         {
           "title": "Must-Have Packages for Beginners",
           "description": "Essential packages every Termux user should install.",
-          "code": "# TEXT EDITORS\npkg install nano     # Simple, beginner-friendly editor\npkg install vim      # Powerful editor (steep learning curve)\n\n# FILE DOWNLOADING\npkg install wget     # Download files from the web\npkg install curl     # Download and test APIs\n\n# PROGRAMMING\npkg install python   # Python 3\npkg install nodejs   # JavaScript runtime\npkg install ruby     # Ruby programming language\n\n# VERSION CONTROL\npkg install git      # Track code changes\n\n# SYSTEM ACCESS\npkg install openssh  # Connect to other computers\npkg install termux-api  # Access Android features\n\n# NETWORK TOOLS\npkg install nmap     # Network scanning\npkg install traceroute  # Trace network path\n\n# UTILITIES\npkg install tree     # Show folder structure as tree\npkg install htop     # Better task manager\npkg install man      # Manual pages\n\n# INSTALL ALL AT ONCE\npkg install nano vim wget curl python nodejs git openssh termux-api tree htop man"
+          "code": "# TEXT EDITORS\npkg install nano     # Simple, beginner-friendly editor\npkg install vim      # Powerful editor (steep learning curve)\n\n# FILE DOWNLOADING\npkg install wget     # Download files from the web\npkg install curl     # Download and test APIs\n\n# PROGRAMMING\npkg install python   # Python 3\npkg install nodejs   # JavaScript runtime\npkg install ruby     # Ruby programming language\n\n# VERSION CONTROL\npkg install git      # Track code changes\n\n# SYSTEM ACCESS\npkg install openssh  # Connect to other computers\npkg install termux-api  # Access Android features\n\n# NETWORK TOOLS\npkg install nmap     # Network scanning\npkg install traceroute  # Trace network path\n\n# UTILITIES\npkg install tree   # Show folder structure as tree\npkg install htop     # Better task manager\npkg install man      # Manual pages\n\n# INSTALL ALL AT ONCE\npkg install nano vim wget curl python nodejs git openssh termux-api tree htop man"
         },
         {
           "title": "Repository Management",
@@ -242,17 +232,17 @@
         {
           "title": "Setting Up Storage Access",
           "description": "Before accessing Android files, you must grant permission.",
-          "code": "# STEP 1: Run the setup command\ntermux-setup-storage\n\n# STEP 2: When the popup appears, tap 'ALLOW'\n\n# STEP 3: Verify it worked\nls ~/storage/\n# You should see: shared/ downloads/ dcim/ pictures/ music/ movies/\n\n# TROUBLESHOOTING:\n# If storage does not work, try: rm -rf ~/storage && termux-setup-storage"
+          "code": "# STEP 1: Run the setup command\ntermux-setup-storage\n\n# STEP 2: Verify it worked\nls ~/storage/\n# You should see: shared/ downloads/ dcim/ pictures/ music/ movies/\n\n# TROUBLESHOOTING:\n# If storage does not work, try: rm -rf ~/storage && termux-setup-storage"
         },
         {
           "title": "Accessing Android Folders",
           "description": "After setup, your Android storage is accessible through ~/storage/.",
-          "code": "# YOUR PHONE'S STORAGE\n~/storage/shared/          # Root of internal storage\n\n# SHORTCUT FOLDERS\n~/storage/downloads/       # Browser downloads\n~/storage/dcim/            # Camera photos\n~/storage/pictures/        # Screenshots and saved images\n~/storage/music/           # Music files\n~/storage/movies/          # Videos\n~/storage/documents/       # Documents folder\n\n# EXAMPLES\nls ~/storage/downloads/\ncd ~/storage/dcim/Camera/\ncp photo.jpg ~/\ncp myfile.txt ~/storage/downloads/"
+          "code": "# YOUR PHONE'S STORAGE\n~/storage/shared/  # Root of internal storage\n\n# SHORTCUT FOLDERS\n~/storage/downloads/  # Browser downloads\n~/storage/dcim/  # Camera photos\n~/storage/pictures/  # Screenshots and saved images\n~/storage/music/    # Music files\n~/storage/movies/  # Videos\n~/storage/documents/  # Documents folder\n\n# EXAMPLES\nls ~/storage/downloads/\ncd ~/storage/dcim/Camera/\ncp myfile.txt ~/storage/downloads/"
         },
         {
           "title": "Moving Files Between Environments",
           "description": "Termux private storage and Android shared storage are separate.",
-          "code": "# TERMUX PRIVATE -> ANDROID\ncp ~/mynote.txt ~/storage/shared/Documents/\n\n# ANDROID -> TERMUX PRIVATE\ncp ~/storage/shared/Download/document.pdf ~/\n\n# COPY WHOLE FOLDERS (use -r for recursive)\ncp -r ~/myproject ~/storage/shared/Documents/\n\n# MOVE instead of copy\nmv ~/storage/shared/DCIM/old_photo.jpg ~/Pictures/\n\n# COMMON WORKFLOW\n# 1. Copy file from Android to Termux\ncp ~/storage/shared/Download/data.csv ~/\n# 2. Process it\npython process.py data.csv\n# 3. Copy the result back\ncp output.txt ~/storage/shared/Download/"
+          "code": "# TERMUX PRIVATE -> ANDROID\ncp ~/mynote.txt ~/storage/shared/Documents/\n\n# ANDROID -> TERMUX PRIVATE\ncp ~/storage/shared/Download/document.pdf ~/\n\n# COPY WHOLE FOLDERS (use -r for recursive)\ncp -r ~/myproject ~/storage/shared/Documents/\n\n# MOVE instead of copy\nmv ~/storage/shared/DCIM/old_photo.jpg ~/Pictures/"
         },
         {
           "title": "Working with External SD Cards",
@@ -273,7 +263,7 @@
         {
           "title": "Color Schemes",
           "description": "Customize terminal colors by editing colors.properties.",
-          "code": "# CREATE THE .termux DIRECTORY\nmkdir -p ~/.termux\n\n# EDIT COLOR SCHEME\nnano ~/.termux/colors.properties\n\n# EXAMPLE DARK THEME:\n# background=black\n# foreground=white\n# cursor=purple\n# color0=black\n# color1=red\n# color2=green\n# color3=yellow\n# color4=blue\n# color5=magenta\n# color6=cyan\n# color7=white\n\n# Apply changes (restart Termux)"
+          "code": "# CREATE THE .termux DIRECTORY\nmkdir -p ~/.termux\n\n# EDIT COLOR SCHEME\nnano ~/.termux/colors.properties\n\n# EXAMPLE THEME:\n# background=black\n# foreground=white\n# cursor=purple\n\n# Apply changes (restart Termux)"
         },
         {
           "title": "Font Size and Style",
@@ -283,12 +273,7 @@
         {
           "title": "Custom Aliases",
           "description": "Create shortcuts for frequently used commands.",
-          "code": "# EDIT YOUR SHELL CONFIGURATION FILE\nnano ~/.zshrc   # If using Zsh\nnano ~/.bashrc  # If using Bash\n\n# ADD ALIASES AT THE BOTTOM:\nalias ll='ls -la'\nalias la='ls -A'\nalias l='ls -CF'\nalias update='pkg update && pkg upgrade'\nalias install='pkg install'\nalias remove='pkg uninstall'\nalias py='python'\nalias ..='cd ..'\nalias ...='cd ../..'\nalias home='cd ~'\n\n# SAVE AND APPLY\nsource ~/.zshrc  # or source ~/.bashrc"
-        },
-        {
-          "title": "Extra Keys Row",
-          "description": "Add a row of useful keys above the keyboard.",
-          "code": "# EDIT TERMUX PROPERTIES\nnano ~/.termux/termux.properties\n\n# ADD EXTRA KEYS CONFIGURATION:\n# extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]\n\n# MORE COMPACT LAYOUT:\n# extra-keys = [['ESC','/','-','HOME','UP','END','PGUP','DEL'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BACKSPACE']]\n\n# SIMPLE ROW:\n# extra-keys = [['ESC','TAB','CTRL','ALT','LEFT','RIGHT','UP','DOWN']]\n\n# APPLY CHANGES\ntermux-reload-settings"
+          "code": "# EDIT YOUR SHELL CONFIGURATION FILE\nnano ~/.zshrc   # If using Zsh\nnano ~/.bashrc  # If using Bash\n\n# ADD ALIASES AT THE BOTTOM:\nalias ll='ls -la'\nalias update='pkg update && pkg upgrade'\nalias install='pkg install'\nalias remove='pkg uninstall'\nalias home='cd ~'\n\n# SAVE AND APPLY\nsource ~/.zshrc  # or source ~/.bashrc"
         }
       ]
     },
@@ -299,27 +284,22 @@
         {
           "title": "Installing Python",
           "description": "Python is a beginner-friendly programming language.",
-          "code": "# INSTALLATION\npkg install python\n\n# VERIFY\npython --version\n\n# PIP (Python's package manager)\npip --version\npip install --upgrade pip\n\n# YOUR FIRST PYTHON SCRIPT\nnano hello.py\n\n# Add this code:\nprint('Hello from Termux!')\nname = input('What is your name? ')\nprint(f'Nice to meet you, {name}!')\n\n# Run it\npython hello.py\n\n# PYTHON INTERACTIVE MODE (REPL)\npython\n>>> print('Hello')\n>>> exit()"
+          "code": "# INSTALLATION\npkg install python\n\n# VERIFY\npython --version\n\n# PIP (Python's package manager)\npip --version\npip install --upgrade pip\n\n# RUN PYTHON INTERACTIVE MODE (REPL)\npython\n>>> print('Hello')\n>>> exit()\n\n# RUN A PYTHON SCRIPT\npython my_script.py"
         },
         {
           "title": "Installing Python Packages",
           "description": "Python has thousands of packages. Use pip to install them.",
-          "code": "# BASIC COMMANDS\npip install requests\npip install flask numpy pandas\npip uninstall requests\npip list\npip show requests\npip freeze > requirements.txt\npip install -r requirements.txt\n\n# ESSENTIAL PACKAGES\npip install requests          # Download from websites\npip install beautifulsoup4    # Extract data from HTML\npip install flask             # Create web servers\npip install numpy             # Math and arrays\npip install pandas            # Data analysis\npip install matplotlib        # Plotting and graphs\n\n# UPGRADE A PACKAGE\npip install --upgrade requests\n\n# INSTALL SPECIFIC VERSION\npip install requests==2.28.0"
+          "code": "# BASIC COMMANDS\npip install requests\npip install flask numpy pandas\npip uninstall requests\npip list\npip show requests\npip freeze > requirements.txt\npip install -r requirements.txt\n\n# ESSENTIAL PACKAGES\npip install requests    # Download from websites\npip install beautifulsoup4  # Extract data from HTML\npip install flask   # Create web servers\npip install numpy   # Math and arrays\npip install pandas   # Data analysis\npip install matplotlib   # Plotting and graphs\n\n# UPGRADE A PACKAGE\npip install --upgrade requests\n\n# INSTALL SPECIFIC VERSION\npip install requests==2.28.0"
         },
         {
           "title": "Creating a Simple Web Server",
           "description": "Start a web server in one line of Python.",
-          "code": "# METHOD 1: Built-in HTTP server\npython -m http.server 8000\n# Open http://localhost:8000 in your browser\n# Press Ctrl+C to stop\n\n# Serve a specific directory\npython -m http.server 8000 --directory /sdcard/Download\n\n# METHOD 2: Flask web framework\npip install flask\n\n# Create app.py:\nfrom flask import Flask, jsonify\nfrom datetime import datetime\n\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return 'Hello from Termux!'\n\n@app.route('/api/time')\ndef get_time():\n    return jsonify({'time': datetime.now().isoformat()})\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000, debug=True)\n\n# Run: python app.py\n# Visit http://localhost:5000"
+          "code": "# METHOD 1: Built-in HTTP server\npython -m http.server 8000\n# Open http://localhost:8000 in your browser\n# Press Ctrl+C to stop\n\n# Serve a specific directory\npython -m http.server 8000 --directory /sdcard/Download\n\n# METHOD 2: Flask web framework\npip install flask\n# Create app.py and run: python app.py"
         },
         {
           "title": "Working with APIs",
           "description": "Fetch data from internet APIs using Python.",
-          "code": "# CREATE AN API DEMO SCRIPT\nnano api_demo.py\n\n# Add this code:\nimport requests\n\n# Get weather data\nresponse = requests.get('https://wttr.in/London?format=j1')\nif response.status_code == 200:\n    weather = response.json()\n    temp = weather['current_condition'][0]['temp_C']\n    print(f'Temperature: {temp}C')\n\n# Get IP information\nip_response = requests.get('https://ipinfo.io/json')\nip_data = ip_response.json()\nprint(f'Your IP: {ip_data.get(\"ip\", \"Unknown\")}')\n\n# Get random joke\njoke_response = requests.get('https://official-joke-api.appspot.com/random_joke')\nif joke_response.status_code == 200:\n    joke = joke_response.json()\n    print(f'{joke[\"setup\"]}')\n    print(f'{joke[\"punchline\"]}')\n\n# Run the script\npython api_demo.py"
-        },
-        {
-          "title": "Automation Script Example",
-          "description": "Create a practical script that automates backing up files.",
-          "code": "# CREATE A BACKUP SCRIPT\nnano backup.py\n\n# Add this code:\nimport os\nimport shutil\nfrom datetime import datetime\nimport zipfile\n\nSOURCE_DIR = os.path.expanduser('~/documents')\nBACKUP_DIR = os.path.expanduser('~/storage/shared/Documents/backups')\n\nos.makedirs(BACKUP_DIR, exist_ok=True)\n\ntimestamp = datetime.now().strftime('%Y%m%d_%H%M%S')\nbackup_name = f'backup_{timestamp}.zip'\nbackup_path = os.path.join(BACKUP_DIR, backup_name)\n\nprint(f'Backing up {SOURCE_DIR}...')\nwith zipfile.ZipFile(backup_path, 'w', zipfile.ZIP_DEFLATED) as zipf:\n    for root, dirs, files in os.walk(SOURCE_DIR):\n        for file in files:\n            file_path = os.path.join(root, file)\n            arcname = os.path.relpath(file_path, SOURCE_DIR)\n            zipf.write(file_path, arcname)\n\nprint(f'Backup created: {backup_path}')\n\n# Run the script\npython backup.py"
+          "code": "# INSTALL REQUESTS\npip install requests\n\n# Create a Python script to fetch API data"
         }
       ]
     },
@@ -330,22 +310,17 @@
         {
           "title": "Installing Node.js",
           "description": "Node.js lets you run JavaScript outside of a browser.",
-          "code": "# INSTALLATION\npkg install nodejs\n\n# VERIFY\nnode --version\nnpm --version\n\n# YOUR FIRST NODE.JS SCRIPT\nnano app.js\n\n# Add this code:\nconsole.log('Hello from Node.js on Termux!');\n\nconst readline = require('readline');\nconst rl = readline.createInterface({\n    input: process.stdin,\n    output: process.stdout\n});\n\nrl.question('What is your name? ', (name) => {\n    console.log(`Nice to meet you, ${name}!`);\n    rl.close();\n});\n\n# Run it\nnode app.js\n\n# NODE REPL (interactive)\nnode\n> console.log('Hello')\n> .exit"
+          "code": "# INSTALLATION\npkg install nodejs\n\n# VERIFY\nnode --version\nnpm --version\n\n# NODE REPL (interactive)\nnode\n> console.log('Hello')\n> .exit\n\n# RUN A NODE.JS SCRIPT\nnode app.js"
         },
         {
           "title": "Creating a Web Server with Express",
           "description": "Express is the most popular Node.js web framework.",
-          "code": "# SETUP\nmkdir myapp && cd myapp\nnpm init -y\nnpm install express\n\n# CREATE SERVER\nnano server.js\n\n# Add this code:\nconst express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.use((req, res, next) => {\n    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);\n    next();\n});\n\napp.use(express.json());\n\napp.get('/', (req, res) => {\n    res.send('Hello from Termux!');\n});\n\napp.get('/api/time', (req, res) => {\n    res.json({ time: new Date().toISOString() });\n});\n\napp.post('/api/data', (req, res) => {\n    res.json({ received: req.body, status: 'ok' });\n});\n\napp.listen(port, '0.0.0.0', () => {\n    console.log(`Server running at http://localhost:${port}`);\n});\n\n# RUN IT\nnode server.js\n\n# AUTO-RESTART WITH NODEMON\nnpm install -g nodemon\nnodemon server.js"
+          "code": "# SETUP\nmkdir myapp && cd myapp\nnpm init -y\nnpm install express\n\n# Create server.js and run: node server.js\n\n# AUTO-RESTART WITH NODEMON\nnpm install -g nodemon\nnodemon server.js"
         },
         {
           "title": "Useful npm Packages",
           "description": "Install global tools and local packages for development.",
-          "code": "# GLOBAL PACKAGES (use -g flag)\nnpm install -g nodemon     # Auto-restart server\nnpm install -g pm2         # Process manager\nnpm install -g npm-check   # Check outdated packages\nnpm install -g http-server # Simple HTTP server\n\n# LOCAL PACKAGES (in project directory)\nnpm install axios         # HTTP client\nnpm install chalk         # Colored terminal output\nnpm install dotenv        # Environment variables\nnpm install commander     # Command line interfaces\n\n# USING PM2 (keep running after closing terminal)\npm2 start server.js\npm2 status\npm2 logs\npm2 stop server.js\n\n# CREATE A SIMPLE CLI TOOL\nnano cli.js\n\n#!/usr/bin/env node\nconsole.log('Hello from CLI!');\nconsole.log('Arguments:', process.argv.slice(2));\n\nchmod +x cli.js\n./cli.js arg1 arg2"
-        },
-        {
-          "title": "File System Operations in Node.js",
-          "description": "Read, write, and manipulate files using Node.js fs module.",
-          "code": "# CREATE A FILE OPERATIONS SCRIPT\nnano fileops.js\n\n# Add this code:\nconst fs = require('fs');\nconst path = require('path');\n\n# Read file\nfs.readFile('example.txt', 'utf8', (err, data) => {\n    if (err) {\n        console.error('Error reading file:', err);\n        return;\n    }\n    console.log('File content:', data);\n});\n\n# Write file (synchronous)\nconst content = 'Hello from Node.js!';\ntry {\n    fs.writeFileSync('output.txt', content);\n    console.log('File written successfully');\n} catch (err) {\n    console.error('Error writing file:', err);\n}\n\n# List directory contents\nconst files = fs.readdirSync('./');\nfiles.forEach(file => {\n    const stats = fs.statSync(file);\n    console.log(`${stats.isDirectory() ? '[DIR]' : '[FILE]'} ${file} - ${stats.size} bytes`);\n});\n\n# Run it\nnode fileops.js"
+          "code": "# GLOBAL PACKAGES (use -g flag)\nnpm install -g nodemon    # Auto-restart server\nnpm install -g pm2     # Process manager\nnpm install -g npm-check   # Check outdated packages\nnpm install -g http-server # Simple HTTP server\n\n# LOCAL PACKAGES (in project directory)\nnpm install axios   # HTTP client\nnpm install chalk   # Colored terminal output\nnpm install dotenv   # Env variables\nnpm install commander  # Command line interfaces\n\n# USING PM2 (keep running after closing terminal)\npm2 start server.js\npm2 status\npm2 logs\npm2 stop server.js"
         }
       ]
     },
