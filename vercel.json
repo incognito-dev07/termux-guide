@@ -18,10 +18,6 @@
       "dest": "/assets/$1"
     },
     {
-      "src": "/beginner.html",
-      "dest": "/beginner.html"
-    },
-    {
       "src": "/beginner",
       "dest": "/beginner.html"
     },

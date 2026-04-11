@@ -1,9 +1,8 @@
-/* components.css - Command card styles with LIGHT code blocks */
 .command-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 14px;
-  margin-bottom: 12px;
+  border-radius: 12px;
+  margin-bottom: 7.5px;
   overflow: hidden;
   transition: all 0.15s;
   box-shadow: var(--shadow-sm);
@@ -18,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  padding: 14px 16px;
   cursor: pointer;
   background: var(--bg-secondary);
   transition: background 0.15s;
@@ -31,22 +30,22 @@
 .command-title {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .command-title i {
   color: var(--accent-primary);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .command-arrow {
   color: var(--text-secondary);
   transition: transform 0.2s;
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .command-card.expanded .command-arrow {
@@ -61,54 +60,58 @@
 }
 
 .command-card.expanded .command-content {
-  padding: 0 20px 20px 20px;
+  padding: 0 16px 16px 16px;
   max-height: 800px;
 }
 
 .command-desc {
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-/* Light mode code block */
+.commands-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .code-block {
   background: #f8f9fc;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1.5px solid var(--border-color);
 }
 
 .code-header {
   background: #f0f3f9;
-  padding: 10px 16px;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
-  font-size: 13px;
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
 }
 
 .code-header span i {
-  margin-right: 8px;
+  margin-right: 6px;
   color: var(--accent-primary);
 }
 
 .copy-code-btn {
   background: transparent;
   border: none;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
   transition: all 0.15s;
-  font-size: 13px;
-  font-family: inherit;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  font-size: 0.9rem !important;
 }
 
 .copy-code-btn:hover {
@@ -118,58 +121,26 @@
 
 .code-block pre {
   margin: 0;
-  padding: 16px;
+  padding: 14px;
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
   font-family: 'Courier New', 'Fira Code', 'Consolas', monospace !important;
   font-size: 13px;
   line-height: 1.6;
-  color: #2c3e50;
+  color: #1a1a2e;
+  font-weight: 500;
 }
 
 .code-block code {
   font-family: 'Courier New', 'Fira Code', 'Consolas', monospace !important;
+  color: #1a1a2e;
+  font-weight: 700;
 }
 
 .code-block pre code .comment-line {
-  color: #7f8c8d;
+  color: #6b7280;
   font-style: italic;
+  font-weight: 600;
   font-family: 'Courier New', 'Fira Code', 'Consolas', monospace !important;
-}
-
-.commands-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-  .command-header {
-    padding: 14px 16px;
-  }
-  
-  .command-title {
-    font-size: 15px;
-    gap: 10px;
-  }
-  
-  .command-card.expanded .command-content {
-    padding: 0 16px 16px 16px;
-  }
-  
-  .command-desc {
-    font-size: 14px;
-  }
-  
-  .code-block pre {
-    font-size: 12px;
-    padding: 12px;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  
-  .code-header {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
 }

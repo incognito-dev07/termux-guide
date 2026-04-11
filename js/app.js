@@ -1,4 +1,3 @@
-// Updated app.js to populate both sidebar and mobile menu
 let tutorialData = {};
 let isBeginnerPage = window.location.pathname.includes('beginner.html') || window.location.pathname === '/beginner';
 
@@ -37,7 +36,7 @@ function renderItem(item) {
         ${hasCode ? `
           <div class="code-block">
             <div class="code-header">
-              <span><i class="fas fa-code"></i> Code</span>
+              <span><i class="fas fa-code"></i></span>
               <button class="copy-code-btn" data-code="${safeCode}">
                 <i class="fas fa-copy"></i> Copy
               </button>

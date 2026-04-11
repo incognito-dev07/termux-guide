@@ -1,4 +1,3 @@
-// navigation.js - Fixed to properly populate menu items
 const Menu = {
   init: function() {
     this.hamburger = document.getElementById('hamburgerBtn');
@@ -49,7 +48,6 @@ const Menu = {
     document.body.style.overflow = '';
   },
   
-  // Add method to update menu items
   updateMenuItems: function(sections) {
     const mobileMenuItems = document.getElementById('mobileMenuItems');
     if (!mobileMenuItems) return;
@@ -65,7 +63,6 @@ const Menu = {
     }
     mobileMenuItems.innerHTML = html;
     
-    // Add click handlers
     mobileMenuItems.querySelectorAll('.menu-item').forEach(item => {
       item.addEventListener('click', () => {
         const sectionId = item.dataset.section;
@@ -78,7 +75,6 @@ const Menu = {
   }
 };
 
-// Initialize menu when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     Menu.init();

@@ -1,22 +1,65 @@
-/* responsive.css - Mobile responsive styles */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .app {
-    padding: 20px 16px 16px;
+    padding: 24px 24px 16px;
   }
   
-  .search-input {
-    padding: 0.8rem 1rem 0.8rem 2.75rem;
-    font-size: 15px;
+  .header h1 {
+    font-size: 28px;
+  }
+  
+  .section-header h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .app {
+    margin-left: 0;
+    padding: 16px 14px 14px;
+    max-width: 100%;
+  }
+  
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .menu-overlay {
+    display: block;
+  }
+  
+  .menu-panel {
+    display: block;
+  }
+  
+  .header {
+    padding-top: 12px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .logo-icon {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .section-header h2 {
+    font-size: 17px;
+  }
+  
+  .section-header i {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .app {
-    padding: 16px 12px 12px;
-  }
-  
-  .header {
-    padding-top: 16px;
+    padding: 14px 10px 10px;
   }
   
   .header h1 {
@@ -24,24 +67,64 @@
   }
   
   .header p {
-    font-size: 14px;
+    font-size: 13px;
   }
   
-  .section-header {
-    gap: 8px;
+  .logo-icon {
+    width: 24px;
+    height: 24px;
   }
   
   .section-header h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .section-header i {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  
+  .goto-beginner-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  
+  .toast {
+    font-size: 12px;
+    padding: 8px 16px;
+    bottom: 16px;
+  }
+  
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .menu-panel {
+    width: 240px;
+  }
+  
+  .command-header {
+    padding: 12px 14px;
+  }
+  
+  .command-card.expanded .command-content {
+    padding: 0 14px 14px 14px;
+  }
+  
+  .command-desc {
+    font-size: 13px;
+  }
+  
+  .code-block pre {
+    font-size: 12px;
+    padding: 10px;
   }
   
   .footer {
-    padding-top: 24px;
-    margin-top: 24px;
+    padding-top: 20px;
+    margin-top: 20px;
   }
 }
 
@@ -50,7 +133,8 @@
   .btn,
   .goto-beginner-btn,
   .command-header,
-  .menu-item {
+  .menu-item,
+  .sidebar-item {
     cursor: default;
   }
   
@@ -66,12 +150,14 @@
   }
   
   .copy-code-btn,
-  .menu-item {
-    min-height: 44px;
+  .menu-item,
+  .sidebar-item {
+    min-height: 40px;
   }
 }
 
 @media print {
+  .sidebar,
   .hamburger-btn,
   .menu-overlay,
   .menu-panel,
@@ -89,6 +175,7 @@
   }
   
   .app {
+    margin-left: 0;
     padding: 0;
     max-width: 100%;
   }
@@ -107,7 +194,6 @@
   .code-block pre,
   .code-block code {
     color: #000 !important;
-    font-family: monospace !important;
   }
   
   .code-header {
