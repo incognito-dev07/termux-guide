@@ -1,5 +1,4 @@
-// Main Application Logic - Handles both main page and beginner page
-
+// Updated app.js to populate both sidebar and mobile menu
 let tutorialData = {};
 let isBeginnerPage = window.location.pathname.includes('beginner.html') || window.location.pathname === '/beginner';
 
@@ -61,8 +60,8 @@ function renderBeginnerGuideSection() {
       <p class="section-description">Never used a terminal before? Start here. No prior knowledge needed.</p>
       <div class="goto-beginner">
         <a href="/beginner.html" class="goto-beginner-btn">
-          <span>Go to Beginner Guide</span>
-          <i class="fas fa-arrow-right"></i>
+          <span><i class="fas fa-arrow-right"></i> Go to Beginner Guide</span>
+          <i class="fas fa-chevron-right"></i>
         </a>
       </div>
     </div>
@@ -155,50 +154,53 @@ function toggleCommand(header) {
   card.classList.toggle('expanded');
 }
 
-function initSidebar() {
+function populateSidebar() {
   const sidebarItems = document.getElementById('sidebarItems');
-  const mobileMenuItems = document.getElementById('mobileMenuItems');
-  
   if (!sidebarItems) return;
   
-  let sidebarHtml = '';
-  let mobileHtml = '';
-  
+  let html = '';
   for (const [sectionId, section] of Object.entries(tutorialData)) {
-    sidebarHtml += `
+    html += `
       <button class="sidebar-item" data-section="${sectionId}">
         <i class="fas ${section.icon}"></i>
-        <span>${escapeHtml(section.title)}</span>
-      </button>
-    `;
-    
-    mobileHtml += `
-      <button class="menu-item" data-section="${sectionId}">
-        <i class="fas ${section.icon}"></i>
-        ${escapeHtml(section.title)}
+        ${section.title}
       </button>
     `;
   }
+  sidebarItems.innerHTML = html;
   
-  sidebarItems.innerHTML = sidebarHtml;
-  if (mobileMenuItems) mobileMenuItems.innerHTML = mobileHtml;
-  
-  document.querySelectorAll('.sidebar-item[data-section]').forEach(item => {
+  sidebarItems.querySelectorAll('.sidebar-item').forEach(item => {
     item.addEventListener('click', () => {
       const sectionId = item.dataset.section;
       switchSection(sectionId);
     });
   });
+}
+
+function populateMobileMenu() {
+  const mobileMenuItems = document.getElementById('mobileMenuItems');
+  if (!mobileMenuItems) return;
   
-  if (mobileMenuItems) {
-    document.querySelectorAll('#mobileMenuItems .menu-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const sectionId = item.dataset.section;
-        switchSection(sectionId);
-        if (window.Menu) window.Menu.close();
-      });
-    });
+  let html = '';
+  for (const [sectionId, section] of Object.entries(tutorialData)) {
+    html += `
+      <button class="menu-item" data-section="${sectionId}">
+        <i class="fas ${section.icon}"></i>
+        ${section.title}
+      </button>
+    `;
   }
+  mobileMenuItems.innerHTML = html;
+  
+  mobileMenuItems.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const sectionId = item.dataset.section;
+      switchSection(sectionId);
+      if (typeof Menu !== 'undefined') {
+        Menu.close();
+      }
+    });
+  });
 }
 
 function initApp() {
@@ -227,7 +229,8 @@ function initApp() {
     });
   });
   
-  initSidebar();
+  populateSidebar();
+  populateMobileMenu();
   
   const urlSection = getUrlParam('section');
   const sectionIds = Object.keys(tutorialData);
