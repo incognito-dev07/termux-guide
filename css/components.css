@@ -78,14 +78,14 @@
 }
 
 .code-block {
-  background: #f8f9fc;
+  background: var(--bg-tertiary);
   border-radius: 10px;
   overflow: hidden;
   border: 1.5px solid var(--border-color);
 }
 
 .code-header {
-  background: #f0f3f9;
+  background: var(--bg-hover);
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
@@ -115,7 +115,7 @@
 }
 
 .copy-code-btn:hover {
-  background: #e0e4ee;
+  background: rgba(168, 85, 247, 0.2);
   color: var(--accent-primary);
 }
 
@@ -128,13 +128,13 @@
   font-family: 'Courier New', 'Fira Code', 'Consolas', monospace !important;
   font-size: 13px;
   line-height: 1.6;
-  color: #1a1a2e;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
 .code-block code {
   font-family: 'Courier New', 'Fira Code', 'Consolas', monospace !important;
-  color: #1a1a2e;
+  color: var(--text-primary);
   font-weight: 700;
 }
 
